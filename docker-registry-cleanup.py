@@ -146,6 +146,7 @@ for filename in linked_manifest_files:
 		manifest_media_type = manifest["mediaType"]
 
 		if manifest_media_type == "application/vnd.docker.distribution.manifest.list.v2+json":
+			linked_manifests.add(shasum)
 			#add all manifests from manifest list
 			for mf in manifest["manifests"]:
 				linked_manifests.add(mf["digest"])
